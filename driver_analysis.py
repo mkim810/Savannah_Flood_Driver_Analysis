@@ -13,7 +13,7 @@ To avoid the high cost, I would recommend GPU-based parallel computation rather 
 
 # --- Configuration ---
 data_dir   = # contains sensitivity analysis result per node (cell)
-xgb_dir    = # 
+xgb_dir    = # XGB result per each node
 output_dir = 
 
 input_path        = os.path.join(data_dir,   "sensitivity_results.csv")
@@ -23,8 +23,8 @@ xgb_residual_path = os.path.join(xgb_dir,   "residuals.csv")
 n_jobs   = -1  # Use all available CPU cores
 N_COMP   = 3   # PLSR components
 
-FEATURES = ['Downstream_Factor', 'Precipitation_Factor', 'Upstream_Factor']
-TARGET   = 'Max_Depth'
+FEATURES = ['Downstream_Factor', 'Precipitation_Factor', 'Upstream_Factor'] # variables
+TARGET   = 'Max_Depth'                                                      # impacted values
 
 # --- Per-Node RF + PLSR Function ---
 def run_models_for_node(node_id, group):
