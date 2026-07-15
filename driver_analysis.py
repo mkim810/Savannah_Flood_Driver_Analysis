@@ -6,11 +6,15 @@ from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import r2_score
 from joblib import Parallel, delayed
 from tqdm import tqdm
+'''
+The overall course is an iteration of all nodes within the domain. So the structue is simple, but computational cost could be high due to the amount.
+To avoid the high cost, I would recommend GPU-based parallel computation rather than CPU-based one.
+'''
 
 # --- Configuration ---
-data_dir   = r"E:\Draft\Technical_Paper\Flood_Sensitivity\paper2_sensitivity"
-xgb_dir    = r"E:\Draft\Technical_Paper\Flood_Sensitivity\paper2_sensitivity"
-output_dir = r"E:\Draft\Technical_Paper\Flood_Sensitivity\paper2_sensitivity"
+data_dir   = # contains sensitivity analysis result per node (cell)
+xgb_dir    = # 
+output_dir = 
 
 input_path        = os.path.join(data_dir,   "sensitivity_results.csv")
 xgb_r2_path       = os.path.join(xgb_dir,   "r2_per_node.csv")
